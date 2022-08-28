@@ -405,6 +405,8 @@ class deepforest(pl.LightningModule):
         # Log loss
         for key, value in loss_dict.items():
             self.log("val_{}".format(key), value, on_epoch=True)     
+
+        self.log("val_loss", losses)
     
         return losses
     
